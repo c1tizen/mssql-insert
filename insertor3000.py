@@ -32,22 +32,16 @@ for i in range(poc_t):
 
 print(fin_prnt)
 print("~"*18)
-print("Vyber si spôsob výpisu:")
-print("1 - https://i.ibb.co/3zRQBMm/prvy.png")
-print("2 - https://i.ibb.co/2NyMC5t/druhy.png")
-fr = int(input())
 # {1: {'fe': ['io', 'op'], 'we': ['yu', 'yu']}, 2: {'cv': ['rt', 'er'], 'hj': ['df', 'fg']}}
-print(poc_t)
-if fr == 2:
-    for i in range(poc_t):
-        # print(",".join(d.keys()))
-        peto = f"INSERT INTO tabulka{i+1} ({','.join(fin_prnt.get(i+1).keys())})"
-        for x in range(udajomet[i]):
-            # res = list(test_dict.keys())[0]
-            dood = ""
-            for y in range(len(fin_prnt.get(i+1).keys())):
-                dood += f"{fin_prnt.get(i+1)[y]}"
-            print(f"{peto} VALUES ({','.join(list(fin_prnt.get(i+1).values())[0])})")
-        #.keys())[1:-1]  ({str(fin_prnt[i])})
-elif fr == 1:
-    print(f"nie")
+for i in range(poc_t):
+    # print(",".join(d.keys()))
+    peto = f"INSERT INTO tabulka{i+1} ({','.join(fin_prnt.get(i+1).keys())})"
+    for x in range(udajomet[i]):
+        # res = list(test_dict.keys())[0]
+        dood = ""
+        '''
+        for y in range(len(fin_prnt.get(i+1).keys())):
+            dood += f"{fin_prnt.get(i+1)[y]}"
+        '''
+        print(f"{peto} VALUES ({','.join(list(fin_prnt.get(i+1).values())[0])})")
+    #.keys())[1:-1]  ({str(fin_prnt[i])})
