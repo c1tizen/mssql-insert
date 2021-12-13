@@ -2,7 +2,7 @@
 Python script for creating randomized INSERTS for MSSQL Studio.
 EN and SK version included.
 
-<h3 align="center"><img src="https://i.ibb.co/b1L8dCj/mssql-insertor-c1tizen-demo.png" alt="logo" height="250px"></h3>
+<h3 align="center"><img src="https://i.ibb.co/bv2xY9T/mssql-insertor-c1tizen-demo.png" alt="logo" height="250px"></h3>
 <p align="center">Demo of INSERTOR</p>
 
 <p align="center">
