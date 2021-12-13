@@ -4,6 +4,7 @@ if lang.lower() == "sk":
     naz_tab = input("Napíš názov tabuľky: ")
     print("~" * 20)
     print("Napíš názvy stĺpcov do ktorých chceš doplniť údaje 'meno priezvisko cislo'")
+    print("Ak je stĺpec BIT tak pred hodnotu napíš 'BIT' napr. 'BITnovy'")
     poc_pol = input("Ak je stĺpec UNIQUE tak pred hodnotu napíš 'UQ' napr. 'UQid_kontakt': ")
     poc_zoz = poc_pol.split(" ")
     poc_ud = int(input("Zadaj počet riadkov údajov pre tabuľku: "))
@@ -13,6 +14,7 @@ else:
     naz_tab = input("Name of table: ")
     print("~"*20)
     print("Name all columns you want use 'name city p_num'")
+    print("If column is BIT use 'BIT' in front of the name e.g. 'BITnew'")
     poc_pol = input("If column is UNIQUE use 'UQ' in front of the name e.g. 'UQid_person': ")
     poc_zoz = poc_pol.split(" ")
     poc_ud = int(input("Number of inserts: "))
@@ -38,6 +40,9 @@ for j in range(len(poc_zoz)):
             zoz_pol.append(f"'{chdd}'")
             roz.remove(chdd)
             switCh = True
+        elif poc_zoz[j][:3] == "BIT":
+            chdd = random.choice(roz)
+            zoz_pol.append(chdd)
         else:
             zoz_pol.append(f"'{random.choice(roz)}'")
     fin_doc.append(zoz_pol)
@@ -45,10 +50,10 @@ for j in range(len(poc_zoz)):
 print("~"*20)
 flipper3d = [list(row) for row in zip(*reversed(fin_doc))]
 for i in range(len(poc_zoz)):
-    print(poc_zoz[i][:2])
-    print(poc_zoz[i][2:])
     if poc_zoz[i][:2] == "UQ":
         poc_zoz[i] = poc_zoz[i][2:]
+    elif poc_zoz[i][:3] == "BIT":
+        poc_zoz[i] = poc_zoz[i][3:]
 for i in range(len(flipper3d)):
     flipper3d[i].reverse()
     print(f"INSERT INTO {naz_tab} ({','.join(poc_zoz)}) VALUES ({','.join(flipper3d[i])})")
