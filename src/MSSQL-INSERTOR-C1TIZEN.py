@@ -44,7 +44,11 @@ for j in range(len(poc_zoz)):
 
 print("~"*20)
 flipper3d = [list(row) for row in zip(*reversed(fin_doc))]
-
+for i in range(len(poc_zoz)):
+    print(poc_zoz[i][:2])
+    print(poc_zoz[i][2:])
+    if poc_zoz[i][:2] == "UQ":
+        poc_zoz[i] = poc_zoz[i][2:]
 for i in range(len(flipper3d)):
     flipper3d[i].reverse()
     print(f"INSERT INTO {naz_tab} ({','.join(poc_zoz)}) VALUES ({','.join(flipper3d[i])})")
