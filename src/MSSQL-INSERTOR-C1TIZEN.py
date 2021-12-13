@@ -34,12 +34,12 @@ for j in range(len(poc_zoz)):
                     else:
                         print(f"ERROR: Not enough values for '{poc_zoz[j]}'")
                         res_req = input("Start a new instance of program and try again.")
-            zoz_pol.append(random.choice(roz))
+            zoz_pol.append(f"'{random.choice(roz)}'")
             roz.remove(zoz_pol[-1])
 
             switCh = True
         else:
-            zoz_pol.append(random.choice(roz))
+            zoz_pol.append(f"'{random.choice(roz)}'")
     fin_doc.append(zoz_pol)
 
 print("~"*20)
