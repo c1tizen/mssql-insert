@@ -34,9 +34,9 @@ for j in range(len(poc_zoz)):
                     else:
                         print(f"ERROR: Not enough values for '{poc_zoz[j]}'")
                         res_req = input("Start a new instance of program and try again.")
-            zoz_pol.append(f"'{random.choice(roz)}'")
-            roz.remove(zoz_pol[-1])
-
+            chdd = random.choice(roz)
+            zoz_pol.append(f"'{chdd}'")
+            roz.remove(chdd)
             switCh = True
         else:
             zoz_pol.append(f"'{random.choice(roz)}'")
@@ -44,6 +44,7 @@ for j in range(len(poc_zoz)):
 
 print("~"*20)
 flipper3d = [list(row) for row in zip(*reversed(fin_doc))]
+
 for i in range(len(flipper3d)):
     flipper3d[i].reverse()
     print(f"INSERT INTO {naz_tab} ({','.join(poc_zoz)}) VALUES ({','.join(flipper3d[i])})")
